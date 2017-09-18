@@ -1,0 +1,19 @@
+{
+  "name": "raspberry-pint-rpi-software",
+  "version": "1.0.0",
+  "description": "This is the software to install on the Raspberry Pi device.",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KCN8/Raspberry-Pint-RPI-Software.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KCN8/Raspberry-Pint-RPI-Software/issues"
+  },
+  "homepage": "https://github.com/KCN8/Raspberry-Pint-RPI-Software#readme"
+}
