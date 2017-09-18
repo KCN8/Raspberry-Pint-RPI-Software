@@ -1,22 +1,13 @@
-"use strict";
-var Gpio = require('pigpio').Gpio;
-var InputMonitor = require('inputmonitor');
+const Raspi = require('raspi-io');
+const five = require('johnny-five');
+const board = new five.Board({
+  io: new Raspi()
+});
 
-// Define constants
-var gpioNum = 19;
-var inputName = 'Input1';
-var inputNum = 1;
+board.on('ready', () => {
 
-// Function to get input status changed
-function inputStatusChanged(number, name, value) {
-    console.log(name + '[' + number + '] (' + (value ? 'ACTIVED' : 'DEACTIVED') + ')');
-}
+  // Create an Led on pin 7 (GPIO4) on P1 and strobe it on/off
+  // Optionally set the speed; defaults to 100ms
+  (new five.Led('GPIO11')).strobe();
 
-// Initialize InputMonitor with GPIO number, a number, a name
-var inputMonitor = new InputMonitor(gpioNum, Gpio.PUD_DOWN, inputNum, inputName);
-
-// Set funcion callback
-inputMonitor.onInputChange(inputStatusChanged);
-
-// Start watch
-inputMonitor.start();
+});
