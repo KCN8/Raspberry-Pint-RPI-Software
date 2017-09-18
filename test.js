@@ -7,10 +7,8 @@ var gpio4 = gpio.export(4, {
    }
 });
 
-gpio4.set(function (){
-  console.log(gpio4.value);
-})
+var processPin4 = function(val) {
+  console.log(val);
+}
 
-gpio4.set(0, function (){
-  console.log(gpio4.value);
-})
+gpio4.on("change", processPin4);
