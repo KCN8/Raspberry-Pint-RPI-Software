@@ -1,14 +1,22 @@
-var gpio = require("gpio");
+"use strict";
+var Gpio = require('pigpio').Gpio;
+var InputMonitor = require('inputmonitor');
 
-var gpio4 = gpio.export(4, {
-   direction: "in",
-   ready: function() {
-     console.log(gpio4);
-   }
-});
+// Define constants
+var gpioNum = 19;
+var inputName = 'Input1';
+var inputNum = 1;
 
-var processPin4 = function(val) {
-  console.log(val);
+// Function to get input status changed
+function inputStatusChanged(number, name, value) {
+    console.log(name + '[' + number + '] (' + (value ? 'ACTIVED' : 'DEACTIVED') + ')');
 }
 
-gpio4.on("change", processPin4);
+// Initialize InputMonitor with GPIO number, a number, a name
+var inputMonitor = new InputMonitor(gpioNum, Gpio.PUD_DOWN, inputNum, inputName);
+
+// Set funcion callback
+inputMonitor.onInputChange(inputStatusChanged);
+
+// Start watch
+inputMonitor.start();
