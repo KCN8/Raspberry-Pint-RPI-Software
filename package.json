@@ -1,19 +1,31 @@
 {
-  "name": "raspberry-pint-rpi-software",
+  "name": "express-auth-seeds",
   "version": "1.0.0",
-  "description": "This is the software to install on the Raspberry Pi device.",
-  "main": "test.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Server side and data storage for Raspberry-Pint",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^7.4.3",
+    "knex": "^0.13.0",
+    "pg": "^7.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KCN8/Raspberry-Pint-RPI-Software.git"
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KCN8/Raspberry-Pint-RPI-Software/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KCN8/Raspberry-Pint-API.git"
   },
-  "homepage": "https://github.com/KCN8/Raspberry-Pint-RPI-Software#readme"
+  "bugs": {
+    "url": "https://github.com/KCN8/Raspberry-Pint-API/issues"
+  },
+  "homepage": "https://github.com/KCN8/Raspberry-Pint-API#readme"
 }
